@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page not found</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; min-height: 100vh; margin: 0; display: flex;
+               align-items: center; justify-content: center; text-align: center;
+               background: linear-gradient(135deg, #eee5ff, #d9c8fa, #f8f4ff); color: #49316d; }
+        a { color: #7146aa; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Page not found</h1>
+        <p>That page doesn't exist. <a id="home" href="./">Go to the registration form</a></p>
+    </div>
+    <script>
+        // On GitHub Pages project sites the repo name is the first path segment,
+        // so send people back to the site root (https://user.github.io/<repo>/).
+        var host = location.hostname;
+        if (host.endsWith('.github.io')) {
+            var repo = location.pathname.split('/')[1];
+            if (repo) document.getElementById('home').href = '/' + repo + '/';
+        }
+    </script>
+</body>
+</html>
